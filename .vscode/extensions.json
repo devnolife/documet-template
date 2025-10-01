@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "prisma.prisma",
+    "ms-vscode.vscode-node-azure-pack",
+    "humao.rest-client",
+    "VisualStudioExptTeam.vscodeintellicode"
+  ]
+}
