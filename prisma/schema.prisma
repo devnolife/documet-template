@@ -83,7 +83,7 @@ model document_categories {
 model signers {
   id           Int      @id @default(autoincrement())
   name         String   @db.VarChar(255)
-  nip          String?  @db.VarChar(50)
+  nbm          String?  @db.VarChar(50)
   email        String?  @db.VarChar(255) // Email untuk notifikasi
   phone        String?  @db.VarChar(20) // Nomor telepon
   role         String   @db.VarChar(100) // dosen_pembimbing, ketua_prodi, dekan
@@ -102,7 +102,7 @@ model signers {
   // Relations
   document_signatures document_signatures[]
   
-  @@unique([nip])
+  @@unique([nbm])
   @@unique([key_id])
   @@unique([email])
 }

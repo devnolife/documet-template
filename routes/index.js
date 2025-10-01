@@ -67,8 +67,16 @@ router.post('/templates/upload/:type/:prodi', templateUpload.single('template'),
 router.get('/templates', eddsaController.getTemplates);
 router.delete('/templates/:type/:prodi', eddsaController.deleteTemplate);
 
-// Signers management for template configuration
-router.get('/signers', eddsaController.getSigners);
+// Health check endpoint
+router.get('/health', (req, res) => {
+  res.json({
+    success: true,
+    message: 'API is healthy',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
+  });
+});
+
 // Stats
 router.get('/stats', eddsaController.getVerificationStats);
 
@@ -80,7 +88,7 @@ router.post('/signature-configs', adminController.createSignatureConfig);
 router.put('/signature-configs/:type', adminController.updateSignatureConfig);
 router.delete('/signature-configs/:type', adminController.deleteSignatureConfig);
 
-// Signers
+// Signers management
 router.get('/signers', adminController.getSigners);
 router.get('/signers/:id', adminController.getSigner);
 router.post('/signers', adminController.createSigner);
