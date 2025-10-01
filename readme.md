@@ -1,522 +1,1243 @@
-# 📄 Generate Document API - Modern Architecture# 📄 **Generate Document API - Dynamic Multi-Prodi System**
+# 📄 Generate Document API - Modern Architecture# 📄 Generate Document API - Modern Architecture
 
-[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)Dibuat oleh **devnolife**
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
 
-[![License](https://img.shields.io/badge/license-ISC-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-ISC-blue.svg)](LICENSE)[![License](https://img.shields.io/badge/license-ISC-blue.svg)](LICENSE)
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/devnolife/documet-template/pulls)## 📌 **Deskripsi**
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/devnolife/documet-template/pulls)[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/devnolife/documet-template/pulls)
 
-> **Modern, Secure, and Scalable Document Generation API with Digital Signature Support**Generate Document API adalah aplikasi berbasis Node.js yang memungkinkan pengguna untuk menghasilkan dokumen berdasarkan template yang telah ditentukan. Aplikasi ini menggunakan **Express.js** sebagai server, **Prisma** untuk interaksi database, dan **Docxtemplater** untuk pembuatan dokumen.
+> **Modern, Secure, and Scalable Document Generation API with Digital Signature Support**> **Modern, Secure, and Scalable Document Generation API with Digital Signature Support**
 
-Developed by **devnolife**### 🆕 **Fitur Terbaru: Dynamic Field Detection**
+Developed by **devnolife**Developed by **devnolife**
 
-Sistem terbaru menggunakan **deteksi field dinamis dari database**, menggantikan sistem hardcoded sebelumnya. Setiap program studi dapat memiliki template dan field yang berbeda-beda, dan konfigurasi disimpan di database.
+## 📌 Overview## 📌 Overview
 
-## 🌟 Features
+Generate Document API adalah aplikasi berbasis Node.js yang memungkinkan pengguna untuk menghasilkan dokumen berdasarkan template yang telah ditentukan. Aplikasi ini menggunakan **Express.js** sebagai server, **Prisma** untuk interaksi database, dan **Docxtemplater** untuk pembuatan dokumen.Generate Document API adalah aplikasi berbasis Node.js yang memungkinkan pengguna untuk menghasilkan dokumen berdasarkan template yang telah ditentukan. Aplikasi ini menggunakan **Express.js** sebagai server, **Prisma** untuk interaksi database, dan **Docxtemplater** untuk pembuatan dokumen.
 
-### 📋 **Supported Prodi**
+### 🆕 Fitur Terbaru### 🆕 Fitur Terbaru: Dynamic Field Detection
 
-### Core Features
+- **Dynamic Field Detection** - Sistem deteksi field dinamis dari database, menggantikan sistem hardcodedSistem terbaru menggunakan **deteksi field dinamis dari database**, menggantikan sistem hardcoded sebelumnya. Setiap program studi dapat memiliki template dan field yang berbeda-beda, dan konfigurasi disimpan di database.
 
-- ✅ **Dynamic Document Generation** - Template-based document generation using Docxtemplater| Prodi | Code | Template Path | Fields Khusus |
+- **Clean Architecture** - Struktur proyek modern dengan separation of concerns
 
-- ✅ **Multi-Program Studi Support** - Informatika, Elektro, Arsitektur, Pengairan, PWK|-------|------|---------------|---------------|
+- **Multi-Signature Workflow** - Support untuk multiple signers per document## 📋 Prerequisites
 
-- ✅ **Digital Signature (EdDSA)** - Ed25519 cryptographic signatures| Teknik Informatika | `informatika` | `templates/informatika/kkp.docx` | - |
+- **Enhanced Security** - EdDSA digital signatures dengan AES-256-GCM encryption
 
-- ✅ **QR Code Verification** - Embedded QR codes for document authenticity| Teknik Pengairan | `pengairan` | `templates/pengairan/kkp.docx` | - |
+- **Node.js** >= 18.0.0
 
-- ✅ **Dynamic Field Management** - Database-driven field configuration| Teknik Elektro | `elektro` | `templates/elektro/kkp.docx` | - |
+## 📋 Prerequisites- **PostgreSQL** >= 14.0
 
-- ✅ **Document Versioning** - Track document versions and changes| Arsitektur | `arsitektur` | `templates/arsitektur/kkp.docx` | - |
+- **npm** >= 9.0.0
 
-- ✅ **Multi-Signature Workflow** - Support for multiple signers per document| Perencanaan Wilayah & Kota | `pwk` | `templates/pwk/kkp.docx` | - |
+- **Node.js** >= 18.0.0
 
-### Security Features---
+- **PostgreSQL** >= 14.0## 🚀 Quick Start
 
-- 🔐 **EdDSA Digital Signatures** - Military-grade cryptography
+- **npm** >= 9.0.0
 
-- 🔐 **SHA-256 Hashing** - Document integrity verification## 🏗️ **Struktur Proyek**
+### 1. Clone Repository
 
-- 🔐 **AES-256-GCM Encryption** - Private key protection
+## 🚀 Quick Start
 
-- 🔐 **Audit Trail** - Complete activity logging```
+````bash
 
-- 🔐 **Rate Limiting** - API abuse preventiongenerate-document-api/
+### 1. Clone Repositorygit clone https://github.com/devnolife/documet-template.git
 
-├── api/ # API utilities dan integrations
-
-### Developer Features│ └── index.js
-
-- 🎯 **Clean Architecture** - Separation of concerns├── auth/ # Authentication & validation
-
-- 🎯 **Repository Pattern** - Abstracted data access│ └── index.js
-
-- 🎯 **Service Layer** - Reusable business logic├── controllers/ # Request handlers
-
-- 🎯 **API Versioning** - Support for multiple API versions│ └── index.js
-
-- 🎯 **Comprehensive Testing** - Unit, integration, and E2E tests├── prisma/ # Database configuration
-
-- 🎯 **Code Quality Tools** - ESLint, Prettier│ ├── index.js
-
-│ ├── schema.prisma
-
-## 🏗️ Architecture│ ├── seed.js # Original seeder
-
-│ ├── seed-documents.js # Dynamic document seeder
-
-````│ └── migrations/
-
-src/├── routes/                       # API routes
-
-├── api/v1/              # API Layer (Routes, Controllers, Middlewares)│   ├── index.js                  # Main routes
-
-├── config/              # Configuration files│   └── document-config.js        # Dynamic field endpoints
-
-├── core/                # Business Logic├── services/                     # Business logic
-
-│   ├── services/        # Service layer│   ├── index.js
-
-│   └── repositories/    # Data access layer│   └── fields.js                 # Dynamic field processing
-
-├── infrastructure/      # External systems├── session/                      # Session management
-
-│   ├── database/        # Prisma & PostgreSQL│   └── index.js
-
-│   └── storage/         # File storage├── templates/                    # Document templates per prodi
-
-└── shared/              # Shared utilities│   ├── informatika/kkp.docx
-
-    ├── utils/           # Utility functions│   ├── elektro/kkp.docx
-
-    ├── helpers/         # Helper functions│   ├── arsitektur/kkp.docx
-
-    └── constants/       # Constants & enums│   ├── pengairan/kkp.docx
-
-```│   ├── pwk/kkp.docx
-
-│   ├── output/                   # Generated documents
-
-See [System Architecture](docs/architecture/system-design.md) for detailed information.│   └── qr-code/                  # QR code assets
-
-├── test/                         # Testing suite
-
-## 📋 Prerequisites│   └── test-dynamic-fields.js
-
-├── utils/                        # Utility functions
-
-- **Node.js** v18.0.0 or higher│   ├── generate-date.js          # Date processing
-
-- **PostgreSQL** v14.0 or higher│   ├── generate-document.js      # Document generation
-
-- **npm** v9.0.0 or higher│   ├── generate-fields.js        # 🆕 Dynamic field generation
-
-│   └── generate-qrcode.js        # QR code generation
-
-## 🚀 Quick Start├── package.json
-
-├── server.js                     # Main server
-
-### 1. Clone & Install├── .env                          # Environment variables
-
-└── readme.md
+cd generate-document-api
 
 ```bash```
 
 git clone https://github.com/devnolife/documet-template.git
 
-cd generate-document-api---
-
-npm install
-
-```## 🚀 **Instalasi & Setup**
-
-
-
-### 2. Environment Setup### 1️⃣ Clone Repository
-
-
-
-```bash```bash
-
-cp .env.example .envgit clone https://github.com/devnolife/generate-document-api.git
-
-# Edit .env with your configurationcd generate-document-api
+cd generate-document-api### 2. Install Dependencies
 
 ````
 
-### 3. Database Setup### 2️⃣ Instalasi Dependencies
+```bash
 
-`bash`bash
+### 2. Install Dependenciesnpm install
 
-npm run prisma:generatenpm install
+```
+
+```bash
+
+npm install### 3. Environment Setup
+
+```
+
+````bash
+
+### 3. Environment Setup# Copy environment template
+
+cp .env.example .env
+
+```bash```
+
+# Copy environment template
+
+cp .env.example .envEdit `.env` file with your configuration:
+
+````
+
+```````env
+
+Edit `.env` file with your configuration:NODE_ENV=development
+
+PORT=8080
+
+```envHOST=0.0.0.0
+
+NODE_ENV=developmentDATABASE_URL="postgresql://user:password@localhost:5432/dbname"
+
+PORT=8080JWT_SECRET=your-secret-key-here
+
+HOST=0.0.0.0CORS_ORIGIN=*
+
+DATABASE_URL="postgresql://user:password@localhost:5432/dbname"```
+
+JWT_SECRET=your-secret-key-here
+
+CORS_ORIGIN=*### 4. Database Setup
+
+LOG_LEVEL=info
+
+``````bash
+
+# Generate Prisma Client
+
+### 4. Database Setupnpm run prisma:generate
+
+
+
+```bash# Run database migrations
+
+# Generate Prisma Clientnpm run prisma:migrate
+
+npm run prisma:generate
+
+# (Optional) Seed database
+
+# Run database migrationsnpm run db:seed
 
 npm run prisma:migrate```
 
-npm run seed
 
-````**Main Dependencies:**
 
-- `express` - Web framework
+# (Optional) Seed database### 5. Start Server
 
-### 4. Start Development Server- `@prisma/client` - Database ORM client
+npm run db:seed
 
-- `prisma` - Database toolkit
-
-```bash- `docxtemplater` - Document template engine
-
-npm run dev- `docxtemplater-image-module-free` - Image module for docx
-
-```- `moment` & `moment-hijri` - Date processing
-
-- `qrcode` - QR code generation
-
-Server will start at `http://localhost:8080`- `cors` - Cross-origin resource sharing
+```**Development Mode:**
 
 
 
-See [Installation Guide](docs/guides/installation.md) for detailed setup instructions.### 3️⃣ Konfigurasi Database
+### 5. Start Server```bash
+
+npm run dev
+
+**Development Mode:**```
 
 
 
-## 📚 DocumentationBuat file `.env` di direktori root:
+```bash**Production Mode:**
+
+npm run dev
+
+``````bash
+
+npm start
+
+**Production Mode:**```
 
 
 
-- [Installation Guide](docs/guides/installation.md) - Complete setup instructions```env
+```bashServer will start at `http://localhost:8080`
 
-- [System Architecture](docs/architecture/system-design.md) - Architecture overviewDATABASE_URL="postgresql://username:password@localhost:5432/generate_document_db"
+npm start
 
-- [Security Documentation](docs/architecture/security.md) - Security implementation```
+```### 6. Verify Installation
 
-- [API Documentation](docs/api/) - API endpoints and usage
 
-### 4️⃣ Setup Database
 
-## 🎨 Project Structure (New)
+Server will start at `http://localhost:8080`**Check API Health:**
 
-```bash
 
-```# Generate Prisma Client
 
-generate-document-api/npx prisma generate
+### 6. Verify Installation```bash
+
+curl http://localhost:8080/api/v1/health
+
+**Check API Health:**```
+
+
+
+```bash**Generate First Document:**
+
+curl http://localhost:8080/api/v1/health
+
+``````bash
+
+curl -X POST http://localhost:8080/api/v1/documents/generate \
+
+**Generate First Document:**  -H "Content-Type: application/json" \
+
+  -d '{
+
+```bash    "type": "kkp",
+
+curl -X POST http://localhost:8080/api/v1/documents/generate \    "prodi": "informatika",
+
+  -H "Content-Type: application/json" \    "data": {
+
+  -d '{      "nim": "123456",
+
+    "type": "kkp",      "nama": "John Doe",
+
+    "prodi": "informatika",      "judul": "My Project Title"
+
+    "data": {    }
+
+      "nim": "123456",  }'
+
+      "nama": "John Doe",```
+
+      "judul": "My Project Title"
+
+    }**Expected Response:**
+
+  }'
+
+``````json
+
+{
+
+**Expected Response:**  "success": true,
+
+  "message": "Document generated successfully",
+
+```json  "data": {
+
+{    "document": {
+
+  "success": true,      "id": "uuid",
+
+  "message": "Document generated successfully",      "type": "kkp",
+
+  "data": {      "prodi": "informatika",
+
+    "document": {      "file_path": "/storage/outputs/informatika_kkp_timestamp.docx"
+
+      "id": "uuid",    }
+
+      "type": "kkp",  }
+
+      "prodi": "informatika",}
+
+      "file_path": "/storage/outputs/informatika_kkp_timestamp.docx",```
+
+      "hash": "sha256_hash",
+
+      "status": "pending"## 🌟 Features
+
+    },
+
+    "filePath": "/storage/outputs/informatika_kkp_timestamp.docx"### 📋 Supported Prodi
+
+  }
+
+}### Core Features
+
+```````
+
+- ✅ **Dynamic Document Generation** - Template-based document generation using Docxtemplater| Prodi | Code | Template Path | Fields Khusus |
+
+## 🌟 Features
+
+- ✅ **Multi-Program Studi Support** - Informatika, Elektro, Arsitektur, Pengairan, PWK|-------|------|---------------|---------------|
+
+### Core Features
+
+- ✅ **Digital Signature (EdDSA)** - Ed25519 cryptographic signatures| Teknik Informatika | `informatika` | `templates/informatika/kkp.docx` | - |
+
+- ✅ **Dynamic Document Generation** - Template-based document generation using Docxtemplater
+
+- ✅ **Multi-Program Studi Support** - Informatika, Elektro, Arsitektur, Pengairan, PWK- ✅ **QR Code Verification** - Embedded QR codes for document authenticity| Teknik Pengairan | `pengairan` | `templates/pengairan/kkp.docx` | - |
+
+- ✅ **Digital Signature (EdDSA)** - Ed25519 cryptographic signatures
+
+- ✅ **QR Code Verification** - Embedded QR codes for document authenticity- ✅ **Dynamic Field Management** - Database-driven field configuration| Teknik Elektro | `elektro` | `templates/elektro/kkp.docx` | - |
+
+- ✅ **Dynamic Field Management** - Database-driven field configuration
+
+- ✅ **Document Versioning** - Track document versions and changes- ✅ **Document Versioning** - Track document versions and changes| Arsitektur | `arsitektur` | `templates/arsitektur/kkp.docx` | - |
+
+- ✅ **Multi-Signature Workflow** - Support for multiple signers per document
+
+- ✅ **Multi-Signature Workflow** - Support for multiple signers per document| Perencanaan Wilayah & Kota | `pwk` | `templates/pwk/kkp.docx` | - |
+
+### Security Features
+
+### Security Features---
+
+- 🔐 **EdDSA Digital Signatures** - Military-grade cryptography (Ed25519)
+
+- 🔐 **SHA-256 Hashing** - Document integrity verification- 🔐 **EdDSA Digital Signatures** - Military-grade cryptography
+
+- 🔐 **AES-256-GCM Encryption** - Private key protection
+
+- 🔐 **Audit Trail** - Complete activity logging- 🔐 **SHA-256 Hashing** - Document integrity verification## 🏗️ **Struktur Proyek**
+
+- 🔐 **Rate Limiting** - API abuse prevention
+
+- 🔐 **Input Validation** - Comprehensive request validation- 🔐 **AES-256-GCM Encryption** - Private key protection
+
+### Developer Features- 🔐 **Audit Trail** - Complete activity logging```
+
+- 🎯 **Clean Architecture** - Clear separation of concerns- 🔐 **Rate Limiting** - API abuse preventiongenerate-document-api/
+
+- 🎯 **Repository Pattern** - Abstracted data access layer
+
+- 🎯 **Service Layer** - Reusable business logic├── api/ # API utilities dan integrations
+
+- 🎯 **API Versioning** - Support for multiple API versions (v1)
+
+- 🎯 **Comprehensive Testing** - Unit, integration, and E2E tests### Developer Features│ └── index.js
+
+- 🎯 **Code Quality Tools** - ESLint, Prettier, Nodemon
+
+- 🎯 **Winston Logging** - Structured logging with file rotation- 🎯 **Clean Architecture** - Separation of concerns├── auth/ # Authentication & validation
+
+- 🎯 **API Documentation** - Built-in API documentation endpoint
+
+- 🎯 **Repository Pattern** - Abstracted data access│ └── index.js
+
+### Supported Program Studi
+
+- 🎯 **Service Layer** - Reusable business logic├── controllers/ # Request handlers
+
+| Prodi | Code | Template Path | Status |
+
+|-------|------|---------------|--------|- 🎯 **API Versioning** - Support for multiple API versions│ └── index.js
+
+| Teknik Informatika | `informatika` | `templates/informatika/kkp.docx` | ✅ Active |
+
+| Teknik Elektro | `elektro` | `templates/elektro/kkp.docx` | ✅ Active |- 🎯 **Comprehensive Testing** - Unit, integration, and E2E tests├── prisma/ # Database configuration
+
+| Arsitektur | `arsitektur` | `templates/arsitektur/kkp.docx` | ✅ Active |
+
+| Teknik Pengairan | `pengairan` | `templates/pengairan/kkp.docx` | ✅ Active |- 🎯 **Code Quality Tools** - ESLint, Prettier│ ├── index.js
+
+| Perencanaan Wilayah & Kota | `pwk` | `templates/pwk/kkp.docx` | ✅ Active |
+
+│ ├── schema.prisma
+
+## 🏗️ Project Structure
+
+## 🏗️ Architecture│ ├── seed.js # Original seeder
+
+`````
+
+generate-document-api/│ ├── seed-documents.js # Dynamic document seeder
 
 ├── src/                              # Source code
 
-│   ├── api/v1/                       # API version 1# Run database migrations
+│   ├── api/v1/                       # API Layer````│ └── migrations/
 
-│   │   ├── controllers/              # Request handlersnpx prisma migrate dev
+│   │   ├── controllers/              # Request handlers (3 files)
 
-│   │   ├── routes/                   # API routes
+│   │   ├── middlewares/              # Express middlewares (6 files)src/├── routes/                       # API routes
 
-│   │   ├── middlewares/              # Middlewares# Seed database dengan data dokumen dinamis
+│   │   └── routes/                   # API routes (4 files)
 
-│   │   └── validators/               # Request validatorsnode prisma/seed-documents.js
+│   ├── config/                       # Configuration files (5 files)├── api/v1/              # API Layer (Routes, Controllers, Middlewares)│   ├── index.js                  # Main routes
 
-│   ├── config/                       # Configuration```
+│   │   ├── app.config.js             # Application config
 
-│   │   ├── app.config.js
+│   │   ├── database.config.js        # Database config├── config/              # Configuration files│   └── document-config.js        # Dynamic field endpoints
 
-│   │   ├── database.config.js### 5️⃣ Jalankan Server
+│   │   ├── storage.config.js         # Storage config
 
-│   │   ├── storage.config.js
+│   │   ├── signature.config.js       # Signature config├── core/                # Business Logic├── services/                     # Business logic
 
-│   │   └── signature.config.js```bash
+│   │   └── index.js                  # Config exports
 
-│   ├── core/                         # Business logicnpm run dev
+│   ├── core/                         # Business Logic│   ├── services/        # Service layer│   ├── index.js
 
-│   │   ├── services/                 # Service layer```
+│   │   ├── services/                 # Service layer (6 files)
 
-│   │   │   ├── document/
+│   │   │   ├── document/             # Document service│   └── repositories/    # Data access layer│   └── fields.js                 # Dynamic field processing
 
-│   │   │   ├── signature/Server akan berjalan di **http://localhost:8080**
+│   │   │   └── signature/            # Signature services
 
-│   │   │   ├── notification/
+│   │   └── repositories/             # Data access layer (4 files)├── infrastructure/      # External systems├── session/                      # Session management
 
-│   │   │   └── audit/---
+│   │       ├── base.repository.js    # Base repository
 
-│   │   └── repositories/             # Data access
-
-│   │       ├── document.repository.js## 🗄️ **Database Schema**
+│   │       ├── document.repository.js│   ├── database/        # Prisma & PostgreSQL│   └── index.js
 
 │   │       ├── signature.repository.js
 
-│   │       └── signer.repository.js### **Table: documents**
+│   │       └── signer.repository.js│   └── storage/         # File storage├── templates/                    # Document templates per prodi
 
-│   ├── infrastructure/               # InfrastructureMenyimpan konfigurasi tipe dokumen untuk setiap prodi.
+│   ├── infrastructure/               # External Systems
 
-│   │   ├── database/
+│   │   ├── database/                 # Database└── shared/              # Shared utilities│   ├── informatika/kkp.docx
 
-│   │   │   └── prisma/| Column | Type | Description |
+│   │   │   └── prisma/
 
-│   │   │       ├── schema.prisma|--------|------|-------------|
+│   │   │       ├── schema.prisma     # Prisma schema    ├── utils/           # Utility functions│   ├── elektro/kkp.docx
 
-│   │   │       ├── client.js| id | int | Primary key |
+│   │   │       ├── client.js         # Prisma client singleton
 
-│   │   │       └── seeds/| type | string | Jenis dokumen (kkp, surat_tugas, etc) |
+│   │   │       ├── migrations/       # Database migrations    ├── helpers/         # Helper functions│   ├── arsitektur/kkp.docx
 
-│   │   └── storage/| prodi | string | Kode program studi |
+│   │   │       └── seeds/            # Seed files
 
-│   │       └── local.storage.js| template_path | string | Path ke template .docx |
+│   │   └── storage/                  # File storage    └── constants/       # Constants & enums│   ├── pengairan/kkp.docx
 
-│   └── shared/                       # Shared components| description | text | Deskripsi dokumen |
+│   │       └── local.storage.js      # Local storage service
 
-│       ├── utils/                    # Utilities| created_at | timestamp | Waktu dibuat |
+│   ├── shared/                       # Shared Components```│   ├── pwk/kkp.docx
 
-│       │   ├── logger.util.js
+│   │   ├── utils/                    # Utilities (5 files)
 
-│       │   ├── date.util.js**Unique constraint:** `(type, prodi)` - Satu prodi hanya punya satu template per tipe dokumen.
+│   │   │   ├── logger.util.js        # Winston logger│   ├── output/                   # Generated documents
 
-│       │   ├── crypto.util.js
+│   │   │   ├── crypto.util.js        # Crypto utilities
 
-│       │   └── file.util.js### **Table: document_fields**
+│   │   │   ├── date.util.js          # Date utilitiesSee [System Architecture](docs/architecture/system-design.md) for detailed information.│   └── qr-code/                  # QR code assets
 
-│       ├── helpers/                  # HelpersMenyimpan konfigurasi field untuk setiap dokumen.
+│   │   │   └── file.util.js          # File utilities
 
-│       │   ├── document.helper.js
+│   │   ├── helpers/                  # Helpers (5 files)├── test/                         # Testing suite
 
-│       │   ├── qrcode.helper.js| Column | Type | Description |
+│   │   │   ├── document.helper.js
 
-│       │   ├── validation.helper.js|--------|------|-------------|
+│   │   │   ├── qrcode.helper.js## 📋 Prerequisites│   └── test-dynamic-fields.js
 
-│       │   └── response.helper.js| id | int | Primary key |
+│   │   │   ├── validation.helper.js
 
-│       └── constants/                # Constants| document_id | int | FK ke documents |
+│   │   │   └── response.helper.js├── utils/                        # Utility functions
 
-│           ├── status-codes.js| field_name | string | Nama field (kepada, tempat_tujuan, etc) |
+│   │   └── constants/                # Constants (5 files)
 
-│           ├── error-codes.js| field_type | string | Tipe field (string, date_hijriyah, table, etc) |
+│   │       ├── status-codes.js- **Node.js** v18.0.0 or higher│   ├── generate-date.js          # Date processing
 
-│           ├── roles.js| is_required | boolean | Apakah field wajib diisi |
+│   │       ├── error-codes.js
 
-│           └── status.js| default_value | text | Nilai default field |
+│   │       ├── roles.js- **PostgreSQL** v14.0 or higher│   ├── generate-document.js      # Document generation
 
-├── storage/                          # Storage directory| created_at | timestamp | Waktu dibuat |
+│   │       └── status.js
 
-│   ├── templates/                    # Document templates
+│   └── app.js                        # Express app setup- **npm** v9.0.0 or higher│   ├── generate-fields.js        # 🆕 Dynamic field generation
 
-│   ├── outputs/                      # Generated documents---
+├── storage/                          # File Storage
 
-│   ├── uploads/                      # Uploaded files
+│   ├── outputs/                      # Generated documents│   └── generate-qrcode.js        # QR code generation
 
-│   ├── qrcodes/                      # QR code images## 🎨 **Field Types yang Didukung**
+│   ├── qrcodes/                      # QR code images
 
-│   └── signatures/                   # Signature images
+│   ├── signatures/                   # Signature images## 🚀 Quick Start├── package.json
 
-├── tests/                            # TestsSistem mendukung berbagai tipe field dengan processing yang sesuai:
+│   └── uploads/                      # Uploaded files
+
+├── templates/                        # Document Templates├── server.js                     # Main server
+
+│   ├── informatika/
+
+│   ├── elektro/### 1. Clone & Install├── .env                          # Environment variables
+
+│   ├── arsitektur/
+
+│   ├── pengairan/└── readme.md
+
+│   └── pwk/
+
+├── tests/                            # Test Files```bash```
 
 │   ├── unit/
 
-│   ├── integration/| Field Type | Description | Contoh Input | Output |
+│   ├── integration/git clone https://github.com/devnolife/documet-template.git
 
-│   └── e2e/|------------|-------------|--------------|--------|
+│   └── e2e/
 
-├── docs/                             # Documentation| `string` | Text biasa | "PT. Tech Indonesia" | "PT. Tech Indonesia" |
+├── docs/                             # Documentationcd generate-document-api---
 
-│   ├── api/| `text` | Text panjang | "Deskripsi proyek..." | "Deskripsi proyek..." |
+│   ├── api/
 
-│   ├── architecture/| `date_hijriyah` | Tanggal Hijriyah | "1445/06/15" | "15 Jumadil Akhir 1445 H" |
+│   ├── architecture/npm install
 
-│   └── guides/| `date_masehi` | Tanggal Masehi | "2024-01-15" | "2024-01-15" |
+│   └── guides/
 
-├── .eslintrc.js                      # ESLint config| `table` | Array data mahasiswa | `[{nama, nim, semester}]` | `[{no: 1, nama, nim, semester}]` |
+├── logs/                             # Application Logs```## 🚀 **Instalasi & Setup**
 
-├── .prettierrc                       # Prettier config| `array` | Array umum | `["item1", "item2"]` | `["item1", "item2"]` |
+│   ├── error.log
 
-├── jest.config.js                    # Jest config| `number` | Angka | 123 | 123 |
+│   └── combined.log
 
-├── nodemon.json                      # Nodemon config| `boolean` | True/False | true | true |
+├── .vscode/                          # VS Code Settings
 
-└── server.js                         # Entry point
+├── server.js                         # Entry Point### 2. Environment Setup### 1️⃣ Clone Repository
 
-```---
+├── package.json
+
+└── README.md
+
+`````
+
+`bash`bash
+
+## 🛠️ Available Scripts
+
+cp .env.example .envgit clone https://github.com/devnolife/generate-document-api.git
+
+### Development
+
+# Edit .env with your configurationcd generate-document-api
+
+`````bash
+
+npm run dev          # Start with nodemon (auto-reload)````
+
+npm run dev:watch    # Start with Node.js --watch flag
+
+npm start            # Start production server### 3. Database Setup### 2️⃣ Instalasi Dependencies
+
+`````
+
+`bash`bash
+
+### Code Quality
+
+npm run prisma:generatenpm install
+
+````````bash
+
+npm run lint         # Run ESLintnpm run prisma:migrate```
+
+npm run lint:fix     # Fix ESLint issues
+
+npm run format       # Format code with Prettiernpm run seed
+
+npm run format:check # Check code formatting
+
+```````**Main Dependencies:**
 
 
 
-## 🛠️ Available Scripts## 🛠️ **API Endpoints**
+### Testing- `express` - Web framework
 
 
 
-### Development### **🔹 Generate Document (Multi-Prodi)**
+```bash### 4. Start Development Server- `@prisma/client` - Database ORM client
+
+npm test                 # Run all tests
+
+npm run test:unit        # Run unit tests- `prisma` - Database toolkit
+
+npm run test:integration # Run integration tests
+
+npm run test:e2e         # Run E2E tests```bash- `docxtemplater` - Document template engine
+
+npm run test:coverage    # Generate coverage report
+
+npm run test:watch       # Run tests in watch modenpm run dev- `docxtemplater-image-module-free` - Image module for docx
+
+````````
+
+```- `moment`&`moment-hijri` - Date processing
+
+### Database
+
+- `qrcode` - QR code generation
 
 ```bash
 
-npm run dev              # Start development server with auto-reload#### `POST /api/generate-document/{type}/{prodi}`
+npm run prisma:generate      # Generate Prisma clientServer will start at `http://localhost:8080`- `cors` - Cross-origin resource sharing
 
-npm run dev:watch        # Start with Node.js --watch flagGenerate dokumen dengan prodi spesifik.
+npm run prisma:migrate       # Run migrations
 
-npm start                # Start production server
+npm run prisma:migrate:prod  # Deploy migrations to production
 
-```**Example Request:**
+npm run prisma:studio        # Open Prisma Studio
 
-```bash
+npm run prisma:reset         # Reset databaseSee [Installation Guide](docs/guides/installation.md) for detailed setup instructions.### 3️⃣ Konfigurasi Database
 
-### DatabasePOST /api/generate-document/kkp/informatika
+npm run db:push              # Push schema changes
 
-```bashContent-Type: application/json
+npm run db:seed              # Seed database
 
-npm run prisma:generate  # Generate Prisma Client
+```
 
-npm run prisma:migrate   # Run migrations{
+## 📚 DocumentationBuat file `.env` di direktori root:
 
-npm run prisma:studio    # Open Prisma Studio  "kepada": "PT. Tech Indonesia",
+### Maintenance
 
-npm run prisma:reset     # Reset database  "tempat_tujuan": "Jakarta",
+````bash
 
-npm run seed             # Seed database  "tanggal_hijriyah": "1445/06/15",
-
-```  "tanggal_masehi": "2024-01-15",
-
-  "tableData": [
-
-### Code Quality    {
-
-```bash      "nama": "Ahmad Rahman",
-
-npm run lint             # Lint code      "nim": "2019001",
-
-npm run lint:fix         # Lint and fix code      "semester": "6"
-
-npm run format           # Format code with Prettier    }
-
-npm run format:check     # Check code formatting  ]
-
-```}
-
-````
-
-### Testing
-
-````bash**Response:**
-
-npm test                 # Run all tests```json
-
-npm run test:unit        # Run unit tests{
-
-npm run test:integration # Run integration tests  "success": true,
-
-npm run test:e2e         # Run E2E tests  "data": {
-
-npm run test:coverage    # Generate coverage report    "filePath": "/path/to/informatika_kkp_1694168876543.docx",
-
-npm run test:watch       # Run tests in watch mode    "no_surat": "001/KKP/2024",
-
-```    "prodi": "informatika",
-
-    "message": "Dokumen KKP untuk prodi informatika berhasil dibuat"
-
-### Maintenance  }
-
-```bash}
-
-npm run clean            # Clean node_modules and cache```
+npm run clean            # Clean node_modules and cache- [Installation Guide](docs/guides/installation.md) - Complete setup instructions```env
 
 npm run clean:storage    # Clean storage directories
 
-```### **🔹 Dynamic Field Configuration**
+```- [System Architecture](docs/architecture/system-design.md) - Architecture overviewDATABASE_URL="postgresql://username:password@localhost:5432/generate_document_db"
 
 
 
-## 🔌 API Endpoints#### `GET /api/document-config/types`
+## 🔌 API Endpoints- [Security Documentation](docs/architecture/security.md) - Security implementation```
 
-Mendapatkan semua tipe dokumen yang tersedia.
 
-### Documents
 
-```**Response:**
+### Documents- [API Documentation](docs/api/) - API endpoints and usage
 
-POST   /api/v1/documents/generate         # Generate document```json
 
-GET    /api/v1/documents/:id              # Get document{
 
-GET    /api/v1/documents                  # List documents  "success": true,
+```### 4️⃣ Setup Database
 
-DELETE /api/v1/documents/:id              # Delete document  "data": {
+POST   /api/v1/documents/generate         # Generate document
 
-```    "kkp": [
+GET    /api/v1/documents                  # List documents## 🎨 Project Structure (New)
 
-      {
+GET    /api/v1/documents/:id              # Get document by ID
 
-### Signatures        "prodi": "informatika",
+GET    /api/v1/documents/:id/download     # Download document```bash
 
-```        "description": "Template surat KKP untuk Program Studi Informatika",
+GET    /api/v1/documents/:id/verify       # Verify document
 
-POST   /api/v1/signatures/sign            # Sign document        "template_path": "templates/informatika/kkp.docx"
+PATCH  /api/v1/documents/:id              # Update document (Admin)```# Generate Prisma Client
 
-POST   /api/v1/signatures/verify          # Verify signature      },
+DELETE /api/v1/documents/:id              # Delete document (Admin)
 
-GET    /api/v1/signatures/:docId          # Get document signatures      {
+GET    /api/v1/documents/types            # List document typesgenerate-document-api/npx prisma generate
 
-```        "prodi": "elektro",
+GET    /api/v1/documents/config/:type/:prodi  # Get document config
 
-        "description": "Template surat KKP untuk Program Studi Teknik Elektro",
+```├── src/                              # Source code
 
-### Admin        "template_path": "templates/elektro/kkp.docx"
 
-```      }
 
-GET    /api/v1/admin/signers              # List signers    ]
+### Signatures│   ├── api/v1/                       # API version 1# Run database migrations
 
-POST   /api/v1/admin/signers              # Create signer  }
 
-PUT    /api/v1/admin/signers/:id          # Update signer}
 
-DELETE /api/v1/admin/signers/:id          # Delete signer```
+```│   │   ├── controllers/              # Request handlersnpx prisma migrate dev
+
+POST   /api/v1/signatures/sign            # Sign document
+
+GET    /api/v1/signatures/verify/:docId   # Verify signatures│   │   ├── routes/                   # API routes
+
+GET    /api/v1/signatures/document/:docId # Get document signatures
+
+GET    /api/v1/signatures/:id             # Get signature by ID│   │   ├── middlewares/              # Middlewares# Seed database dengan data dokumen dinamis
+
+POST   /api/v1/signatures/qrcode          # Generate QR code
+
+GET    /api/v1/signatures/logs/:docId     # Get verification logs (Admin)│   │   └── validators/               # Request validatorsnode prisma/seed-documents.js
+
+POST   /api/v1/signatures/:id/revoke      # Revoke signature (Admin)
+
+```│   ├── config/                       # Configuration```
+
+
+
+### Signers│   │   ├── app.config.js
+
+
+
+```│   │   ├── database.config.js### 5️⃣ Jalankan Server
+
+POST   /api/v1/signatures/signers         # Create signer (Admin)
+
+GET    /api/v1/signatures/signers         # List signers│   │   ├── storage.config.js
+
+GET    /api/v1/signatures/signers/:id     # Get signer by ID
+
+GET    /api/v1/signatures/signers/nbm/:nbm  # Get signer by NBM│   │   └── signature.config.js```bash
+
+PATCH  /api/v1/signatures/signers/:id     # Update signer (Admin)
+
+POST   /api/v1/signatures/signers/:id/deactivate  # Deactivate signer (Admin)│   ├── core/                         # Business logicnpm run dev
+
+POST   /api/v1/signatures/signers/:id/rotate-keys  # Rotate keys (Admin)
+
+```│   │   ├── services/                 # Service layer```
+
+
+
+### Admin│   │   │   ├── document/
+
+
+
+```│   │   │   ├── signature/Server akan berjalan di **http://localhost:8080**
+
+GET    /api/v1/admin/statistics           # Get statistics (Admin)
+
+GET    /api/v1/admin/activities           # Get recent activities (Admin)│   │   │   ├── notification/
+
+GET    /api/v1/admin/audit-logs           # Get audit logs (Admin)
+
+GET    /api/v1/admin/health                # System health (Admin)│   │   │   └── audit/---
+
+GET    /api/v1/admin/documents/by-prodi   # Documents by prodi (Admin)
+
+GET    /api/v1/admin/documents/by-type    # Documents by type (Admin)│   │   └── repositories/             # Data access
+
+POST   /api/v1/admin/cleanup               # Cleanup old files (Admin)
+
+GET    /api/v1/admin/export                # Export data (Admin)│   │       ├── document.repository.js## 🗄️ **Database Schema**
 
 ````
 
-#### `GET /api/document-config/fields/{type}?prodi=xxx`
+│ │ ├── signature.repository.js
 
-See [API Documentation](docs/api/) for complete endpoint details.Mendapatkan field yang tersedia untuk tipe dokumen tertentu.
+**Total: 34+ endpoints**
 
-## 🔐 Security**Response:**
+│ │ └── signer.repository.js### **Table: documents**
 
-````json
+See [API Documentation](docs/guides/api-usage.md) for detailed endpoint information.
+
+│ ├── infrastructure/ # InfrastructureMenyimpan konfigurasi tipe dokumen untuk setiap prodi.
+
+## ⚠️ Common Issues & Solutions
+
+│ │ ├── database/
+
+### Port Already in Use
+
+│ │ │ └── prisma/| Column | Type | Description |
+
+**Windows:**
+
+│ │ │ ├── schema.prisma|--------|------|-------------|
+
+````bash
+
+netstat -ano | findstr :8080│   │   │       ├── client.js| id | int | Primary key |
+
+taskkill /PID <PID> /F
+
+```│   │   │       └── seeds/| type | string | Jenis dokumen (kkp, surat_tugas, etc) |
+
+
+
+**Linux/Mac:**│   │   └── storage/| prodi | string | Kode program studi |
+
+
+
+```bash│   │       └── local.storage.js| template_path | string | Path ke template .docx |
+
+lsof -ti:8080 | xargs kill -9
+
+```│   └── shared/                       # Shared components| description | text | Deskripsi dokumen |
+
+
+
+### Database Connection Error│       ├── utils/                    # Utilities| created_at | timestamp | Waktu dibuat |
+
+
+
+1. Check PostgreSQL is running│       │   ├── logger.util.js
+
+2. Verify `DATABASE_URL` in `.env`
+
+3. Test connection: `npx prisma db pull`│       │   ├── date.util.js**Unique constraint:** `(type, prodi)` - Satu prodi hanya punya satu template per tipe dokumen.
+
+
+
+### Template Not Found│       │   ├── crypto.util.js
+
+
+
+1. Ensure template exists: `templates/informatika/kkp.docx`│       │   └── file.util.js### **Table: document_fields**
+
+2. Check file permissions
+
+3. Verify prodi and type parameters│       ├── helpers/                  # HelpersMenyimpan konfigurasi field untuk setiap dokumen.
+
+
+
+### Module Not Found│       │   ├── document.helper.js
+
+
+
+```bash│       │   ├── qrcode.helper.js| Column | Type | Description |
+
+# Reinstall dependencies
+
+rm -rf node_modules package-lock.json│       │   ├── validation.helper.js|--------|------|-------------|
+
+npm install
+
+```│       │   └── response.helper.js| id | int | Primary key |
+
+
+
+## 🏗️ Architecture│       └── constants/                # Constants| document_id | int | FK ke documents |
+
+
+
+### Clean Architecture Pattern│           ├── status-codes.js| field_name | string | Nama field (kepada, tempat_tujuan, etc) |
+
+
+
+```│           ├── error-codes.js| field_type | string | Tipe field (string, date_hijriyah, table, etc) |
+
+┌──────────────────────────────────────────────────────────┐
+
+│                     API Layer (v1)                       ││           ├── roles.js| is_required | boolean | Apakah field wajib diisi |
+
+│  Routes → Middlewares → Controllers                      │
+
+└────────────────────┬─────────────────────────────────────┘│           └── status.js| default_value | text | Nilai default field |
+
+                     │
+
+┌────────────────────▼─────────────────────────────────────┐├── storage/                          # Storage directory| created_at | timestamp | Waktu dibuat |
+
+│                   Core Layer                             │
+
+│  Services → Repositories                                 ││   ├── templates/                    # Document templates
+
+└────────────────────┬─────────────────────────────────────┘
+
+                     ││   ├── outputs/                      # Generated documents---
+
+┌────────────────────▼─────────────────────────────────────┐
+
+│                Infrastructure Layer                       ││   ├── uploads/                      # Uploaded files
+
+│  Database (Prisma) → Storage (Local)                     │
+
+└────────────────────┬─────────────────────────────────────┘│   ├── qrcodes/                      # QR code images## 🎨 **Field Types yang Didukung**
+
+                     │
+
+┌────────────────────▼─────────────────────────────────────┐│   └── signatures/                   # Signature images
+
+│                   Shared Layer                           │
+
+│  Utils → Helpers → Constants                             │├── tests/                            # TestsSistem mendukung berbagai tipe field dengan processing yang sesuai:
+
+└──────────────────────────────────────────────────────────┘
+
+```│   ├── unit/
+
+
+
+### Request Flow│   ├── integration/| Field Type | Description | Contoh Input | Output |
+
+
+
+```│   └── e2e/|------------|-------------|--------------|--------|
+
+Client Request
+
+     ↓├── docs/                             # Documentation| `string` | Text biasa | "PT. Tech Indonesia" | "PT. Tech Indonesia" |
+
+Express Router (routes/)
+
+     ↓│   ├── api/| `text` | Text panjang | "Deskripsi proyek..." | "Deskripsi proyek..." |
+
+Middleware Stack (validation, auth, rate-limit)
+
+     ↓│   ├── architecture/| `date_hijriyah` | Tanggal Hijriyah | "1445/06/15" | "15 Jumadil Akhir 1445 H" |
+
+Controller (request handling)
+
+     ↓│   └── guides/| `date_masehi` | Tanggal Masehi | "2024-01-15" | "2024-01-15" |
+
+Service Layer (business logic)
+
+     ↓├── .eslintrc.js                      # ESLint config| `table` | Array data mahasiswa | `[{nama, nim, semester}]` | `[{no: 1, nama, nim, semester}]` |
+
+Repository Layer (data access)
+
+     ↓├── .prettierrc                       # Prettier config| `array` | Array umum | `["item1", "item2"]` | `["item1", "item2"]` |
+
+Prisma Client
+
+     ↓├── jest.config.js                    # Jest config| `number` | Angka | 123 | 123 |
+
+PostgreSQL Database
+
+```├── nodemon.json                      # Nodemon config| `boolean` | True/False | true | true |
+
+
+
+### Key Design Patterns└── server.js                         # Entry point
+
+
+
+- **Repository Pattern** - Data access abstraction```---
+
+- **Service Layer Pattern** - Business logic encapsulation
+
+- **Singleton Pattern** - Database connection, Logger
+
+- **Factory Pattern** - QR Code generation, Document generation
+
+- **Middleware Pattern** - Express middlewares## 🛠️ Available Scripts## 🛠️ **API Endpoints**
+
+
+
+See [System Architecture](docs/architecture/system-design.md) for detailed information.
+
+
+
+## 🔐 Security### Development### **🔹 Generate Document (Multi-Prodi)**
+
+
+
+### Implemented Security Measures```bash
+
+
+
+1. **Digital Signatures**npm run dev              # Start development server with auto-reload#### `POST /api/generate-document/{type}/{prodi}`
+
+   - EdDSA (Ed25519) for document signing
+
+   - Public/Private key cryptographynpm run dev:watch        # Start with Node.js --watch flagGenerate dokumen dengan prodi spesifik.
+
+   - Signature verification workflow
+
+npm start                # Start production server
+
+2. **Data Protection**
+
+   - SHA-256 hashing for document integrity```**Example Request:**
+
+   - AES-256-GCM encryption for private keys
+
+   - Secure key storage and rotation```bash
+
+
+
+3. **API Security**### DatabasePOST /api/generate-document/kkp/informatika
+
+   - Rate limiting (100-30 req/15min depending on endpoint)
+
+   - JWT authentication (planned)```bashContent-Type: application/json
+
+   - Input validation and sanitization
+
+   - CORS configurationnpm run prisma:generate  # Generate Prisma Client
+
+
+
+4. **Audit & Monitoring**npm run prisma:migrate   # Run migrations{
+
+   - Complete audit trail
+
+   - Verification logsnpm run prisma:studio    # Open Prisma Studio  "kepada": "PT. Tech Indonesia",
+
+   - Activity tracking
+
+   - Winston structured loggingnpm run prisma:reset     # Reset database  "tempat_tujuan": "Jakarta",
+
+
+
+See [Security Documentation](docs/architecture/security.md) for details.npm run seed             # Seed database  "tanggal_hijriyah": "1445/06/15",
+
+
+
+## 🧪 Testing```  "tanggal_masehi": "2024-01-15",
+
+
+
+### Test Structure  "tableData": [
+
+
+
+```bash### Code Quality    {
+
+tests/
+
+├── unit/              # Unit tests for services, utilities```bash      "nama": "Ahmad Rahman",
+
+├── integration/       # Integration tests for API endpoints
+
+└── e2e/              # End-to-end tests for workflowsnpm run lint             # Lint code      "nim": "2019001",
+
+````
+
+npm run lint:fix # Lint and fix code "semester": "6"
+
+### Running Tests
+
+npm run format # Format code with Prettier }
+
+`````bash
+
+# Run all testsnpm run format:check     # Check code formatting  ]
+
+npm test
+
+```}
+
+# Run specific test suite
+
+npm run test:unit````
+
+npm run test:integration
+
+npm run test:e2e### Testing
+
+
+
+# Watch mode````bash**Response:**
+
+npm run test:watch
+
+npm test                 # Run all tests```json
+
+# Coverage report
+
+npm run test:coveragenpm run test:unit        # Run unit tests{
+
+`````
+
+npm run test:integration # Run integration tests "success": true,
+
+## 📊 Database Schema
+
+npm run test:e2e # Run E2E tests "data": {
+
+### Core Tables
+
+npm run test:coverage # Generate coverage report "filePath": "/path/to/informatika_kkp_1694168876543.docx",
+
+- **`documents`** - Document configurations per prodi
+
+- **`document_fields`** - Dynamic field definitionsnpm run test:watch # Run tests in watch mode "no_surat": "001/KKP/2024",
+
+- **`signers`** - Registered signers with EdDSA keys
+
+- **`document_signatures`** - Individual signatures``` "prodi": "informatika",
+
+- **`verification_logs`** - Verification attempts
+
+- **`audit_logs`** - System audit trail "message": "Dokumen KKP untuk prodi informatika berhasil dibuat"
+
+### Key Relationships### Maintenance }
+
+`````bash}
+
+documents (1) ←→ (N) document_fields
+
+documents (1) ←→ (N) document_signaturesnpm run clean            # Clean node_modules and cache```
+
+signers (1) ←→ (N) document_signatures
+
+```npm run clean:storage    # Clean storage directories
+
+
+
+## 📚 Documentation```### **🔹 Dynamic Field Configuration**
+
+
+
+- **[Quick Start Guide](QUICKSTART.md)** - Fast setup and first API call
+
+- **[Installation Guide](docs/guides/installation.md)** - Complete setup instructions
+
+- **[API Usage Guide](docs/guides/api-usage.md)** - API endpoints and examples## 🔌 API Endpoints#### `GET /api/document-config/types`
+
+- **[Migration Guide](docs/guides/migration.md)** - Migration from old structure
+
+- **[System Architecture](docs/architecture/system-design.md)** - Architecture overviewMendapatkan semua tipe dokumen yang tersedia.
+
+- **[Security Documentation](docs/architecture/security.md)** - Security implementation
+
+- **[Cleanup Summary](docs/CLEANUP_SUMMARY.md)** - Project restructuring details### Documents
+
+
+
+## 🤝 Contributing```**Response:**
+
+
+
+Contributions are welcome! Please follow these steps:POST   /api/v1/documents/generate         # Generate document```json
+
+
+
+1. Fork the repositoryGET    /api/v1/documents/:id              # Get document{
+
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+
+3. Commit your changes (`git commit -m 'Add: amazing feature'`)GET    /api/v1/documents                  # List documents  "success": true,
+
+4. Push to the branch (`git push origin feature/amazing-feature`)
+
+5. Open a Pull RequestDELETE /api/v1/documents/:id              # Delete document  "data": {
+
+
+
+### Coding Standards```    "kkp": [
+
+
+
+- Use **camelCase** for variables and functions      {
+
+- Use **async/await** for asynchronous operations
+
+- Include **error handling** in all functions### Signatures        "prodi": "informatika",
+
+- Add **comments** for complex business logic
+
+- **Test** endpoints before commit```        "description": "Template surat KKP untuk Program Studi Informatika",
+
+- Follow **ESLint** and **Prettier** rules
+
+POST   /api/v1/signatures/sign            # Sign document        "template_path": "templates/informatika/kkp.docx"
+
+## 📝 Code Style
+
+POST   /api/v1/signatures/verify          # Verify signature      },
+
+This project uses:
+
+GET    /api/v1/signatures/:docId          # Get document signatures      {
+
+- **ESLint** for code linting
+
+- **Prettier** for code formatting```        "prodi": "elektro",
+
+- **Conventional Commits** for commit messages
+
+        "description": "Template surat KKP untuk Program Studi Teknik Elektro",
+
+```bash
+
+# Check code style### Admin        "template_path": "templates/elektro/kkp.docx"
+
+npm run lint
+
+npm run format:check```      }
+
+
+
+# Fix code styleGET    /api/v1/admin/signers              # List signers    ]
+
+npm run lint:fix
+
+npm run formatPOST   /api/v1/admin/signers              # Create signer  }
+
+```
+
+PUT    /api/v1/admin/signers/:id          # Update signer}
+
+## 🛣️ Roadmap
+
+DELETE /api/v1/admin/signers/:id          # Delete signer```
+
+### Planned Features
+
+````
+
+- [ ] JWT Authentication implementation
+
+- [ ] Web-based template editor#### `GET /api/document-config/fields/{type}?prodi=xxx`
+
+- [ ] Field validation based on field_type
+
+- [ ] Template versioning systemSee [API Documentation](docs/api/) for complete endpoint details.Mendapatkan field yang tersedia untuk tipe dokumen tertentu.
+
+- [ ] Batch document generation
+
+- [ ] Document preview before generation## 🔐 Security**Response:**
+
+- [ ] Advanced field types (dropdown, multiselect)
+
+- [ ] Template inheritance system````json
+
+- [ ] Real-time document status tracking
 
 - **EdDSA (Ed25519)** for digital signatures{
 
+### Performance Improvements
+
 - **SHA-256** for document hashing  "success": true,
 
-- **AES-256-GCM** for private key encryption  "data": [
+- [ ] Template caching system
 
-- **Rate limiting** to prevent API abuse    {
+- [ ] Background job processing for bulk generation- **AES-256-GCM** for private key encryption  "data": [
+
+- [ ] CDN integration for template storage
+
+- [ ] Redis caching for metadata- **Rate limiting** to prevent API abuse    {
+
+- [ ] Database query optimization
 
 - **Input validation** at middleware level      "id": 1,
 
+## 📄 License
+
 - **Comprehensive audit logging**      "type": "kkp",
+
+This project is licensed under the ISC License.
 
       "prodi": "informatika",
 
+## 👥 Author
+
 See [Security Documentation](docs/architecture/security.md) for details.      "template_path": "templates/informatika/kkp.docx",
+
+**devnolife**
 
       "description": "Template surat KKP untuk Program Studi Informatika",
 
-## 🧪 Testing      "fields": [
+- GitHub: [@devnolife](https://github.com/devnolife)
 
-        {
+- Repository: [documet-template](https://github.com/devnolife/documet-template)## 🧪 Testing      "fields": [
 
-```bash          "field_name": "kepada",
 
-# Run all tests          "field_type": "string",
+
+## 🙏 Acknowledgments        {
+
+
+
+- Express.js team```bash          "field_name": "kepada",
+
+- Prisma team
+
+- Docxtemplater contributors# Run all tests          "field_type": "string",
+
+- All open-source contributors
 
 npm test          "is_required": true,
 
+## 📞 Support
+
           "default_value": null
 
-# Run with coverage        },
+- **Documentation:** [/api/docs](http://localhost:8080/api/docs)
 
-npm run test:coverage        {
+- **Health Check:** [/api/v1/health](http://localhost:8080/api/v1/health)# Run with coverage        },
 
-          "field_name": "nama_prodi",
+- **Issues:** [GitHub Issues](https://github.com/devnolife/documet-template/issues)
 
-# Run specific test suite          "field_type": "string",
+- **Discussions:** [GitHub Discussions](https://github.com/devnolife/documet-template/discussions)npm run test:coverage        {
 
-npm run test:unit          "is_required": false,
 
-npm run test:integration          "default_value": "Informatika"
 
-npm run test:e2e        },
+---          "field_name": "nama_prodi",
+
+
+
+<div align="center"># Run specific test suite          "field_type": "string",
+
+
+
+**⭐ If you find this project useful, please give it a star! ⭐**npm run test:unit          "is_required": false,
+
+
+
+Built with ❤️ by [devnolife](https://github.com/devnolife)npm run test:integration          "default_value": "Informatika"
+
+
+
+</div>npm run test:e2e        },
+
 
 ```        {
 
@@ -965,7 +1686,7 @@ Proyek ini dilisensikan di bawah **ISC License**.
 
 ## 📞 **Support & Contact**
 
-**Developer:** devnolife  
+**Developer:** devnolife
 **Repository:** [github.com/devnolife/generate-document-api](https://github.com/devnolife/generate-document-api)
 
 Untuk bug report atau feature request, silakan buat issue di GitHub repository.
@@ -973,3 +1694,4 @@ Untuk bug report atau feature request, silakan buat issue di GitHub repository.
 ---
 
 **🎉 Generate Document API - Dynamic Multi-Prodi System siap digunakan!**
+`````
