@@ -1,0 +1,306 @@
+{
+  "documents": [
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440001",
+      "type": "kkp",
+      "prodi": "informatika",
+      "file_path": "/storage/outputs/informatika_kkp_1757654981006.docx",
+      "hash": "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456",
+      "status": "signed",
+      "metadata": {
+        "nim": "11219001",
+        "nama": "Ahmad Fauzi Rahman",
+        "judul": "Implementasi Algoritma Machine Learning untuk Prediksi Cuaca",
+        "pembimbing1": "Dr. Andi Setiawan, M.Kom",
+        "pembimbing2": "Prof. Budi Santoso, Ph.D",
+        "tanggal": "15 Januari 2025"
+      },
+      "created_at": "2025-01-01T10:30:00.000Z",
+      "updated_at": "2025-01-01T14:45:00.000Z",
+      "document_signatures": [
+        {
+          "id": "sig-001",
+          "signer_id": "signer-001",
+          "signature": "304502210089abc123...",
+          "signed_at": "2025-01-01T12:30:00.000Z",
+          "metadata": {
+            "location": "Bandung",
+            "reason": "Approval Pembimbing 1"
+          }
+        },
+        {
+          "id": "sig-002",
+          "signer_id": "signer-002",
+          "signature": "304502210089def456...",
+          "signed_at": "2025-01-01T14:45:00.000Z",
+          "metadata": {
+            "location": "Bandung",
+            "reason": "Approval Pembimbing 2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440002",
+      "type": "kkp",
+      "prodi": "elektro",
+      "file_path": "/storage/outputs/elektro_kkp_1757655549038.docx",
+      "hash": "b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef1234567",
+      "status": "pending",
+      "metadata": {
+        "nim": "11319002",
+        "nama": "Siti Nurhaliza",
+        "judul": "Desain dan Implementasi Sistem Kontrol Motor DC dengan Arduino",
+        "pembimbing1": "Dr. Candra Wijaya, M.T",
+        "pembimbing2": "Ir. Desi Ratnawati, M.T",
+        "tanggal": "16 Januari 2025"
+      },
+      "created_at": "2025-01-01T11:15:00.000Z",
+      "updated_at": "2025-01-01T11:15:00.000Z",
+      "document_signatures": []
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440003",
+      "type": "kkp",
+      "prodi": "arsitektur",
+      "file_path": "/storage/outputs/arsitektur_kkp_1757647168203.docx",
+      "hash": "c3d4e5f6789012345678901234567890abcdef1234567890abcdef12345678",
+      "status": "partially_signed",
+      "metadata": {
+        "nim": "11419003",
+        "nama": "Muhammad Rizky Pratama",
+        "judul": "Perancangan Taman Kota Berkelanjutan dengan Konsep Green Architecture",
+        "pembimbing1": "Prof. Dr. Eko Budihardjo, M.Arch",
+        "pembimbing2": "Dr. Fitria Sari, S.Ars, M.T",
+        "tanggal": "17 Januari 2025"
+      },
+      "created_at": "2025-01-01T09:45:00.000Z",
+      "updated_at": "2025-01-01T13:20:00.000Z",
+      "document_signatures": [
+        {
+          "id": "sig-003",
+          "signer_id": "signer-003",
+          "signature": "304502210089ghi789...",
+          "signed_at": "2025-01-01T13:20:00.000Z",
+          "metadata": {
+            "location": "Bandung",
+            "reason": "Approval Pembimbing 1"
+          }
+        }
+      ]
+    }
+  ],
+  "signers": [
+    {
+      "id": "signer-001",
+      "nbm": "197001011998031001",
+      "name": "Dr. Andi Setiawan, M.Kom",
+      "role": "dosen_pembimbing",
+      "prodi": "informatika",
+      "email": "andi.setiawan@university.ac.id",
+      "phone": "081234567890",
+      "position": "Dosen Pembimbing 1",
+      "public_key": "302a300506032b6570032100ab123456789abcdef...",
+      "status": "active",
+      "created_at": "2024-12-01T00:00:00.000Z",
+      "last_signature": "2025-01-01T12:30:00.000Z"
+    },
+    {
+      "id": "signer-002",
+      "nbm": "196505151990121002",
+      "name": "Prof. Budi Santoso, Ph.D",
+      "role": "dosen_pembimbing",
+      "prodi": "informatika",
+      "email": "budi.santoso@university.ac.id",
+      "phone": "081234567891",
+      "position": "Dosen Pembimbing 2",
+      "public_key": "302a300506032b6570032100cd123456789abcdef...",
+      "status": "active",
+      "created_at": "2024-12-01T00:00:00.000Z",
+      "last_signature": "2025-01-01T14:45:00.000Z"
+    },
+    {
+      "id": "signer-003",
+      "nbm": "196808081995031003",
+      "name": "Prof. Dr. Eko Budihardjo, M.Arch",
+      "role": "dosen_pembimbing",
+      "prodi": "arsitektur",
+      "email": "eko.budihardjo@university.ac.id",
+      "phone": "081234567892",
+      "position": "Dosen Pembimbing 1",
+      "public_key": "302a300506032b6570032100ef123456789abcdef...",
+      "status": "active",
+      "created_at": "2024-12-01T00:00:00.000Z",
+      "last_signature": "2025-01-01T13:20:00.000Z"
+    },
+    {
+      "id": "signer-004",
+      "nbm": "197512121998032004",
+      "name": "Dr. Candra Wijaya, M.T",
+      "role": "dosen_pembimbing",
+      "prodi": "elektro",
+      "email": "candra.wijaya@university.ac.id",
+      "phone": "081234567893",
+      "position": "Dosen Pembimbing 1",
+      "public_key": "302a300506032b6570032100gh123456789abcdef...",
+      "status": "active",
+      "created_at": "2024-12-01T00:00:00.000Z",
+      "last_signature": null
+    }
+  ],
+  "documentTypes": [
+    {
+      "type": "kkp",
+      "description": "Kerja Praktik",
+      "prodis": ["informatika", "elektro", "arsitektur", "pwk"],
+      "requiredFields": ["nim", "nama", "judul", "pembimbing1", "pembimbing2", "tanggal"],
+      "optionalFields": ["tempat_kkp", "alamat_tempat", "periode"],
+      "templatePath": "templates/{prodi}/kkp.docx"
+    },
+    {
+      "type": "surat_tugas",
+      "description": "Surat Tugas",
+      "prodis": ["informatika", "elektro"],
+      "requiredFields": [
+        "nama",
+        "nip",
+        "jabatan",
+        "keperluan",
+        "tujuan",
+        "tanggal_mulai",
+        "tanggal_selesai"
+      ],
+      "optionalFields": ["transportasi", "akomodasi"],
+      "templatePath": "templates/{prodi}/surat_tugas.docx"
+    },
+    {
+      "type": "surat_izin",
+      "description": "Surat Izin Penelitian",
+      "prodis": ["informatika", "elektro", "arsitektur"],
+      "requiredFields": [
+        "nama",
+        "nim",
+        "judul_penelitian",
+        "lokasi",
+        "tanggal_mulai",
+        "tanggal_selesai"
+      ],
+      "optionalFields": ["kontak_person", "catatan"],
+      "templatePath": "templates/{prodi}/surat_izin.docx"
+    }
+  ],
+  "statistics": {
+    "documents": {
+      "total": 1247,
+      "byStatus": {
+        "pending": 89,
+        "partially_signed": 45,
+        "signed": 1113
+      },
+      "byType": {
+        "kkp": 856,
+        "surat_tugas": 234,
+        "surat_izin": 157
+      },
+      "byProdi": {
+        "informatika": 543,
+        "elektro": 378,
+        "arsitektur": 219,
+        "pwk": 107
+      },
+      "thisMonth": 156,
+      "thisWeek": 23,
+      "today": 3
+    },
+    "signatures": {
+      "total": 2184,
+      "thisMonth": 287,
+      "thisWeek": 45,
+      "today": 6,
+      "averageSigningTime": "2.5 hours"
+    },
+    "signers": {
+      "total": 52,
+      "active": 48,
+      "inactive": 4,
+      "byRole": {
+        "dosen_pembimbing": 35,
+        "koordinator": 8,
+        "kaprodi": 9
+      }
+    }
+  },
+  "recentActivities": [
+    {
+      "id": "activity-001",
+      "type": "document_generated",
+      "description": "Document generated for Ahmad Fauzi Rahman (KKP Informatika)",
+      "timestamp": "2025-01-01T15:30:00.000Z",
+      "user": "system",
+      "metadata": {
+        "documentId": "550e8400-e29b-41d4-a716-446655440001",
+        "prodi": "informatika"
+      }
+    },
+    {
+      "id": "activity-002",
+      "type": "document_signed",
+      "description": "Document signed by Prof. Budi Santoso, Ph.D",
+      "timestamp": "2025-01-01T14:45:00.000Z",
+      "user": "signer-002",
+      "metadata": {
+        "documentId": "550e8400-e29b-41d4-a716-446655440001",
+        "signerId": "signer-002"
+      }
+    },
+    {
+      "id": "activity-003",
+      "type": "signer_created",
+      "description": "New signer created: Dr. Fitria Sari",
+      "timestamp": "2025-01-01T13:15:00.000Z",
+      "user": "admin",
+      "metadata": {
+        "signerId": "signer-005",
+        "signerName": "Dr. Fitria Sari"
+      }
+    }
+  ],
+  "verificationResults": [
+    {
+      "documentId": "550e8400-e29b-41d4-a716-446655440001",
+      "valid": true,
+      "documentHash": "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456",
+      "totalSignatures": 2,
+      "validSignatures": 2,
+      "invalidSignatures": 0,
+      "status": "fully_verified",
+      "verificationDate": "2025-01-01T16:00:00.000Z",
+      "signatures": [
+        {
+          "signatureId": "sig-001",
+          "signerName": "Dr. Andi Setiawan, M.Kom",
+          "signerRole": "dosen_pembimbing",
+          "valid": true,
+          "signedAt": "2025-01-01T12:30:00.000Z",
+          "verificationDetails": {
+            "signatureIntegrity": true,
+            "certificateValid": true,
+            "timestampValid": true
+          }
+        },
+        {
+          "signatureId": "sig-002",
+          "signerName": "Prof. Budi Santoso, Ph.D",
+          "signerRole": "dosen_pembimbing",
+          "valid": true,
+          "signedAt": "2025-01-01T14:45:00.000Z",
+          "verificationDetails": {
+            "signatureIntegrity": true,
+            "certificateValid": true,
+            "timestampValid": true
+          }
+        }
+      ]
+    }
+  ]
+}
