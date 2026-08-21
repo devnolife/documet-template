@@ -10,19 +10,25 @@ const { logger } = require('../../../shared/utils');
 class DatabaseClient {
   constructor() {
     if (!DatabaseClient.instance) {
-      this.prisma = new PrismaClient({
+      const basePrisma = new PrismaClient({
         log: config.prisma.log,
         errorFormat: config.prisma.errorFormat,
       });
 
-      // Connection lifecycle hooks
-      this.prisma.$use(async (params, next) => {
-        const before = Date.now();
-        const result = await next(params);
-        const after = Date.now();
+      // Use Prisma Client Extensions for query logging (replacement for $use middleware)
+      this.prisma = basePrisma.$extends({
+        query: {
+          $allModels: {
+            async $allOperations({ operation, model, args, query }) {
+              const before = Date.now();
+              const result = await query(args);
+              const after = Date.now();
 
-        logger.debug(`Query ${params.model}.${params.action} took ${after - before}ms`);
-        return result;
+              logger.debug(`Query ${model}.${operation} took ${after - before}ms`);
+              return result;
+            },
+          },
+        },
       });
 
       DatabaseClient.instance = this;
